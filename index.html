@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script src="vega_lite_vis.js"></script>
+<link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+</head>
+<body>
+<div class = "page">
+    <h1>Windy Days in Australia</h1>
+    <p>This page contains two visualisations about windy days in Australia from 2007 to 2017.</p>
+<div class ="pure-g">
+    <div class="pure-u-1-2">
+        <div class="description description-left">
+        <h2>Map of Windy Days in Australia</h2>
+        <p>This map shows the number of windy days in each state for the year with the most windy days overall.</p>
+        </div>
+    </div>
+    <div class="pure-u-1-2">  
+        <h2>Stacked Bar Chart of Windy Days in Australia</h2>
+        <p>This bar chart shows the trend of windy days in each state over the years.</p>
+    </div>
+    <div class="pure-u-1-2">
+        <div id="map_chart" class="vis-container"></div>
+        </div>
+    <div class="pure-u-1-2">
+        <div id="bar_chart" class="vis-container"></div>
+        </div>
+    </div>
+        
+</body>
+</html>
