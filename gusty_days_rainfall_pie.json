@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 300,
+  "data": {"url": "betterweatherAUS.csv"},
+  "transform": [
+    {"filter": "datum.State == stateSelection"},
+    {"filter": "datum.WindGustSpeed > 62"},
+    {
+      "calculate": "datum.Rainfall < 1 ? 'Dry (<1mm)' : datum.Rainfall <= 20 ? 'Raining (1-20mm)' : 'Heavy Rain (>20mm)'",
+      "as": "rainfallCategory"
+    },
+    {
+      "aggregate": [{"op": "count", "as": "count"}],
+      "groupby": ["rainfallCategory"]
+    }
+  ],
+  "params": [
+    {
+      "name": "stateSelection",
+      "value": "Australian Capital Territory"
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 0,
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "rainfallCategory",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Dry (<1mm)", "Raining (1-20mm)", "Heavy Rain (>20mm)"],
+        "range": ["#e6f3ff", "#4d94ff", "#0066cc"]
+      },
+      "legend": {
+        "title": "Rainfall Category",
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {"field": "rainfallCategory", "type": "nominal", "title": "Rainfall Category"},
+      {"field": "count", "type": "quantitative", "title": "Number of Days"}
+    ]
+  },
+  "title": {
+    "text": "Gusty Days (>62 km/h) by Rainfall",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "anchor": "start"
+  }
+}

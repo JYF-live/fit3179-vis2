@@ -1,0 +1,58 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 300,
+  "data": {"url": "betterweatherAUS.csv"},
+  "transform": [
+    {"filter": "datum.State == stateSelection"},
+    {"filter": "datum.WindGustSpeed > 62"},
+    {
+      "calculate": "datum.Temp >= 25 ? 'Hot (≥25°C)' : datum.Temp >= 12 ? 'Medium (12-25°C)' : 'Cold (<12°C)'",
+      "as": "tempCategory"
+    },
+    {
+      "aggregate": [{"op": "count", "as": "count"}],
+      "groupby": ["tempCategory"]
+    }
+  ],
+  "params": [
+    {
+      "name": "stateSelection",
+      "value": "Australian Capital Territory"
+    }
+  ],
+  "mark": {
+    "type": "arc",
+    "innerRadius": 0,
+    "stroke": "white",
+    "strokeWidth": 2
+  },
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative"
+    },
+    "color": {
+      "field": "tempCategory",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Hot (≥25°C)", "Medium (12-25°C)", "Cold (<12°C)"],
+        "range": ["#d62728", "#ff7f0e", "#2ca02c"]
+      },
+      "legend": {
+        "title": "Temperature Category",
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {"field": "tempCategory", "type": "nominal", "title": "Temperature Category"},
+      {"field": "count", "type": "quantitative", "title": "Number of Days"}
+    ]
+  },
+  "title": {
+    "text": "Gusty Days (>62 km/h) by Temperature",
+    "fontSize": 16,
+    "fontWeight": "bold",
+    "anchor": "start"
+  }
+}
