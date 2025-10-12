@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 300,
+  "height": 300,
+  "data": {"url": "StateAVG.csv"},
+  "transform": [
+    {
+      "calculate": "indexof(['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], datum.month)",
+      "as": "monthNum"
+    },
+    {"filter": "datum.State == stateSelection"}
+  ],
+  "params": [
+    {
+      "name": "stateSelection",
+      "value": "Australian Capital Territory"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "stroke": "#cccccc",
+        "strokeWidth": 1,
+        "opacity": 0.5
+      },
+      "encoding": {
+        "theta": {
+          "field": "monthNum",
+          "type": "ordinal",
+          "scale": {"range": [0, 6.28]}
+        },
+        "radius": {"value": 180},
+        "radius2": {"value": 30}
+      }
+    },
+    {
+      "mark": {
+        "type": "arc",
+        "innerRadius": 30,
+        "outerRadius": {"expr": "30 + (datum.meanGust - 30) * 2.5"},
+        "theta": {"expr": "PI/6"},
+        "stroke": "white",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "theta": {
+          "field": "monthNum",
+          "type": "ordinal",
+          "scale": {"range": [0, 6.28]}
+        },
+        "radius": {
+          "field": "meanGust",
+          "type": "quantitative",
+          "scale": {"range": [30, 150]}
+        },
+        "color": {
+          "field": "meanGust",
+          "type": "quantitative",
+          "scale": {"scheme": "viridis"},
+          "legend": {"title": "Wind Gust (km/h)"}
+        },
+        "tooltip": [
+          {"field": "month", "type": "nominal", "title": "Month"},
+          {"field": "State", "type": "nominal", "title": "State"},
+          {"field": "meanGust", "type": "quantitative", "format": ".1f", "title": "Wind Gust (km/h)"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "middle",
+        "fontSize": 10,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "theta": {
+          "field": "monthNum",
+          "type": "ordinal",
+          "scale": {"range": [0, 6.28]}
+        },
+        "radius": {"value": 170},
+        "text": {"field": "month", "type": "nominal"}
+      }
+    }
+  ],
+  "title": {
+    "text": "Mean Wind Gust by Month",
+    "fontSize": 16,
+    "fontWeight": "bold"
+  }
+}

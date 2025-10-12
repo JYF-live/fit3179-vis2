@@ -40,7 +40,7 @@
       "filter": "datum.WindCata != 'Safe'"
     },
     {
-      "filter": "indexof(['New South Wales', 'Victoria', 'Tasmania'], datum.State) >= 0"
+      "filter": "indexof(['New South Wales', 'Victoria', 'Tasmania', 'South Australia'], datum.State) >= 0"
     },
     {
       "filter": "datum.year == selected_year"
@@ -69,7 +69,7 @@
         "color": {
           "field": "State",
           "type": "nominal",
-          "scale": {"domain": ["New South Wales", "Victoria", "Tasmania"], "range": ["#e41a1c", "#377eb8", "#4daf4a"]},
+          "scale": {"domain": ["New South Wales", "Victoria", "Tasmania", "South Australia"], "range": ["#e41a1c", "#377eb8", "#4daf4a", "#ff7f00"]},
           "legend": {"title": "State", "orient": "right"}
         },
         "tooltip": [
