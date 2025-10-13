@@ -1,7 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "Windy Days (>62km/h) by Top 3 States (Monthly View)",
+    "text": "Windy Days (>62km/h) by Top 4 States (Monthly View)",
     "fontSize": 16,
     "anchor": "start"
   },
