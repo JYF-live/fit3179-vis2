@@ -58,7 +58,12 @@
           "field": "meanTemp",
           "type": "quantitative",
           "scale": {"scheme": "plasma"},
-          "legend": {"title": "Temperature (°C)"}
+          "legend": {
+            "title": "Temperature (°C)",
+            "orient": "bottom",
+            "offset": 10,
+            "padding": 10
+          }
         },
         "tooltip": [
           {"field": "month", "type": "nominal", "title": "Month"},

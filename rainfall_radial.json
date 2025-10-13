@@ -58,7 +58,12 @@
           "field": "meanRain",
           "type": "quantitative",
           "scale": {"scheme": "blues"},
-          "legend": {"title": "Rainfall (mm)"}
+          "legend": {
+            "title": "Rainfall (mm)",
+            "orient": "bottom",
+            "offset": 10,
+            "padding": 10
+          }
         },
         "tooltip": [
           {"field": "month", "type": "nominal", "title": "Month"},

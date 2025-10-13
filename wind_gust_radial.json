@@ -58,7 +58,12 @@
           "field": "meanGust",
           "type": "quantitative",
           "scale": {"scheme": "viridis"},
-          "legend": {"title": "Wind Gust (km/h)"}
+          "legend": {
+            "title": "Wind Gust (km/h)",
+            "orient": "bottom",
+            "offset": 10,
+            "padding": 10
+          }
         },
         "tooltip": [
           {"field": "month", "type": "nominal", "title": "Month"},

@@ -1,42 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
-<link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-<script src="vega_lite_vis.js"></script>
-<link rel="stylesheet" type="text/css" href="styles.css" media="all">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dangerous Winds and Where to Find Them</title>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-<div class = "page">
-    <h1>Windy Days in Australia</h1>
-    <p>This page contains two visualisations about windy days in Australia from 2007 to 2017.</p>
-<div class ="pure-g">
-    <div class="pure-u-1-2">
-        <div class="description description-left">
-        <h2>Map of Windy Days in Australia</h2>
-        <p>This map shows the number of windy days in each state for the year with the most windy days overall.</p>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Dangerous Winds and Where to Find Them</h1>
         </div>
-    </div>
-    <div class="pure-u-1-2">  
-        <h2>Stacked Bar Chart of Windy Days in Australia</h2>
-        <p>This bar chart shows the trend of windy days in each state over the years.</p>
-    </div>
-    <div class="pure-u-1-2">
-        <div id="map_chart" class="vis-container"></div>
-        </div>
-    <div class="pure-u-1-2">
-        <div id="bar_chart" class="vis-container"></div>
-        </div>
-    </div>
         
+        <!-- Row 1: Choropleth Map + Text -->
+        <div class="grid-row grid-2">
+            <div class="chart-container">
+                <div class="chart-title">Wind Gust Distribution Across Australia</div>
+                <div id="choroplethMap"></div>
+            </div>
+            <div class="text-container">
+                <h3>Understanding Wind Patterns</h3>
+                <div class="placeholder-text">
+                    <p>This section will contain detailed analysis about wind patterns across different Australian states and territories. The choropleth map shows the geographic distribution of dangerous wind conditions, helping identify high-risk areas for extreme weather events.</p>
+                    <p>Key insights about regional variations, seasonal patterns, and meteorological factors contributing to dangerous wind conditions will be discussed here.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Row 2: Text + Stacked Area Chart -->
+        <div class="grid-row grid-2">
+            <div class="text-container">
+                <h3>Temporal Analysis of Wind Events</h3>
+                <div class="placeholder-text">
+                    <p>The adjacent chart reveals temporal trends in dangerous wind events across Australia. This analysis covers multiple years of meteorological data, showing how wind patterns have evolved over time.</p>
+                    <p>Seasonal variations, yearly trends, and the frequency of extreme wind events are visualized to provide insights into climate patterns and potential future risks.</p>
+                </div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Wind Events Over Time</div>
+                <div id="stackedAreaChart"></div>
+            </div>
+        </div>
+        
+        <!-- Row 3: Full Width Text -->
+        <div class="grid-row grid-1">
+            <div class="text-container small">
+                <h3>Comprehensive Weather Analysis</h3>
+                <div class="placeholder-text">
+                    <p>The following radial charts provide a comprehensive view of weather conditions throughout the year, showing the relationship between temperature, wind gusts, and rainfall patterns. These circular visualizations make it easy to identify seasonal trends and understand how different weather factors interact to create dangerous conditions.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Row 4: Three Radial Charts -->
+        <div class="grid-row grid-3">
+            <div class="chart-container">
+                <div class="chart-title">Mean Temperature (°C)</div>
+                <div id="tempChart"></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Mean Wind Gust (km/h)</div>
+                <div id="gustChart"></div>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Mean Rainfall (mm)</div>
+                <div id="rainChart"></div>
+            </div>
+        </div>
+        
+        <!-- Row 5: Pie Charts + Filter -->
+        <div class="grid-row grid-pie">
+            <div class="chart-container">
+                <div class="chart-title">Gusty Days by Temperature</div>
+                <div id="tempPieChart"></div>
+            </div>
+            <div class="filter-container">
+                <label for="stateSelect">Select State:</label>
+                <select id="stateSelect">
+                    <option value="Australian Capital Territory">Australian Capital Territory</option>
+                    <option value="New South Wales">New South Wales</option>
+                    <option value="Northern Territory">Northern Territory</option>
+                    <option value="Queensland">Queensland</option>
+                    <option value="South Australia">South Australia</option>
+                    <option value="Tasmania">Tasmania</option>
+                    <option value="Victoria">Victoria</option>
+                    <option value="Western Australia">Western Australia</option>
+                </select>
+            </div>
+            <div class="chart-container">
+                <div class="chart-title">Gusty Days by Rainfall</div>
+                <div id="rainPieChart"></div>
+            </div>
+        </div>
+        
+        <!-- Row 6: Final Text -->
+        <div class="grid-row grid-1">
+            <div class="text-container small">
+                <h3>Conclusion and Insights</h3>
+                <div class="placeholder-text">
+                    <p>This comprehensive analysis of dangerous wind patterns across Australia reveals important insights for weather prediction, safety planning, and climate research. The interactive visualizations demonstrate the complex relationships between temperature, rainfall, and wind conditions, providing valuable data for understanding extreme weather events and their geographic and temporal distributions.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
 </body>
 </html>
