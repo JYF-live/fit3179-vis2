@@ -13,11 +13,11 @@
   "params": [
     {
       "name": "selected_year",
-      "value": 2008,
+      "value": 2009,
       "bind": {
         "input": "range",
-        "min": 2008,
-        "max": 2017,
+        "min": 2009,
+        "max": 2016,
         "step": 1,
         "name": "Select Year: "
       }
