@@ -48,11 +48,5 @@
       {"field": "tempCategory", "type": "nominal", "title": "Temperature Category"},
       {"field": "count", "type": "quantitative", "title": "Number of Days"}
     ]
-  },
-  "title": {
-    "text": "Gusty Days (>62 km/h) by Temperature",
-    "fontSize": 16,
-    "fontWeight": "bold",
-    "anchor": "start"
   }
 }

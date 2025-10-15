@@ -48,11 +48,6 @@
       {"field": "rainfallCategory", "type": "nominal", "title": "Rainfall Category"},
       {"field": "count", "type": "quantitative", "title": "Number of Days"}
     ]
-  },
-  "title": {
-    "text": "Gusty Days (>62 km/h) by Rainfall",
-    "fontSize": 16,
-    "fontWeight": "bold",
-    "anchor": "start"
   }
+  
 }

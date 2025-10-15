@@ -24,22 +24,20 @@
                 <div id="choroplethMap"></div>
             </div>
             <div class="text-container">
-                <h3>Understanding Wind Patterns</h3>
-                <div class="placeholder-text">
-                    <p>This section will contain detailed analysis about wind patterns across different Australian states and territories. The choropleth map shows the geographic distribution of dangerous wind conditions, helping identify high-risk areas for extreme weather events.</p>
-                    <p>Key insights about regional variations, seasonal patterns, and meteorological factors contributing to dangerous wind conditions will be discussed here.</p>
-                </div>
+                <h3>Australia's Dangerous Winds</h3>
+                    <p>Wind warnings in Australia are issued whenever there are gusts of Winds reaching over 62km/h, at these speeds, it is no longer reccomended to participate in certain outdoor activities, drive lighter vehicles and it is especially important not to stand around older and larger trees as they can be prone to breaking, property damage under these conditions are unfortunately common.</p>
+                    <p>We aim to understand how these gusty days are distributed across different regions and times of the year, the choropleth map provides a visual representation of this distribution, showing the number of days where a maximum wind gust speed has been recorded to be over 62km/h. We can see from the map that Victoria is the leading state in terms of dangerous wind days, followed closely by Tasmania. Coming in 3rd place is South Australia and rounding out our top 4 is New South Wales.</p>
+                    
             </div>
         </div>
         
         <!-- Row 2: Text + Stacked Area Chart -->
         <div class="grid-row grid-2">
             <div class="text-container">
-                <h3>Temporal Analysis of Wind Events</h3>
-                <div class="placeholder-text">
-                    <p>The adjacent chart reveals temporal trends in dangerous wind events across Australia. This analysis covers multiple years of meteorological data, showing how wind patterns have evolved over time.</p>
-                    <p>Seasonal variations, yearly trends, and the frequency of extreme wind events are visualized to provide insights into climate patterns and potential future risks.</p>
-                </div>
+                <h3>Temporal Analysis of Wind Events</h3>                
+                    <p>The Data set used for this analysis contains complete data from the year 2009 to 2016, that is 7 years of clean data. So far we have looked at these gusty days in totality but knowing how weather works maybe we can identify which month/s have the most hazards and maybe we can see if it has changed over time.</p>
+                    <p>The adjacent stacked area chart fitted with a year slider breaks down our gusty days data by month, allowing us to visualize trends and patterns over the years. What we end up finding is that for the vast majority of years, the 3rd quarter of the year tends to have the most dangerous wind days. 2014 and 2015 were particularly strange as what is normally a windy period saw a significant drop and had those days shifted to May or even January.</p>
+                    <p>Furthermore an interesting point to note is that across the top 4 states, the trends in these dangerous wind days are quite similar which makes sense given that this is the still the same body of land but still interesting as these states can have quite a different climate compared to one another.</p>    
             </div>
             <div class="chart-container">
                 <div class="chart-title">Wind Events Over Time</div>
@@ -51,9 +49,7 @@
         <div class="grid-row grid-1">
             <div class="text-container small">
                 <h3>Comprehensive Weather Analysis</h3>
-                <div class="placeholder-text">
-                    <p>The following radial charts provide a comprehensive view of weather conditions throughout the year, showing the relationship between temperature, wind gusts, and rainfall patterns. These circular visualizations make it easy to identify seasonal trends and understand how different weather factors interact to create dangerous conditions.</p>
-                </div>
+                    <p>From here we want to understand some of the key relationships between different weather variables and how they contribute to dangerous wind events. We will be looking at Average Rainfall, maximum gust speed and temperature side by side to see how the trends may line up for each states then we can look at the pie charts to see whether windy days happened on hot or cold days and on rainy or dry days. It is a good idea to have a look at each state to even see what stays the same what does not.</p>                
             </div>
         </div>
         
@@ -102,10 +98,8 @@
         <div class="grid-row grid-1">
             <div class="text-container small">
                 <h3>Conclusion and Insights</h3>
-                <div class="placeholder-text">
-                    <p>This comprehensive analysis of dangerous wind patterns across Australia reveals important insights for weather prediction, safety planning, and climate research. The interactive visualizations demonstrate the complex relationships between temperature, rainfall, and wind conditions, providing valuable data for understanding extreme weather events and their geographic and temporal distributions.</p>
-                </div>
-            </div>
+                <p>Across the board we can see how the trends in rainfall and temperature affect the trends in gusty days. Overall it seems that temperature does not have much of an affect on dangerous wind events at least as far as just the average temperature however a good explanation of how it affects gusty days can be infered when we look at states like Northern Territory and Queensland, which generally have a pretty stable temperature and which also coinsides their lower number of dangerous wind days. While not shown explicitly here it is likely that the change in temperature is more important than the actual temperature itself. As for Rainfall the trend is quite obvious, there is a significantly larger number of dangerous wind days that have enough rainfall to constitute at least a shower.</p>
+                <p>In conclusion we were able to determine the top 4 states by gusty days being Victoria, South Australia, Tasmania and New South Wales, when these events are most likely to occur by looking at the trends over the years and by comparing the values of other weather attributes we can now understand what conditions are associated with these dangerous wind events.</p>
         </div>
     </div>
     

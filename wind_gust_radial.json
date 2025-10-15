@@ -62,7 +62,7 @@
             "title": "Wind Gust (km/h)",
             "orient": "bottom",
             "offset": 10,
-            "padding": 10
+            "padding": 20
           }
         },
         "tooltip": [
@@ -90,10 +90,5 @@
         "text": {"field": "month", "type": "nominal"}
       }
     }
-  ],
-  "title": {
-    "text": "Mean Wind Gust by Month",
-    "fontSize": 16,
-    "fontWeight": "bold"
-  }
+  ]
 }
