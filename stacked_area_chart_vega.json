@@ -69,7 +69,7 @@
         "color": {
           "field": "State",
           "type": "nominal",
-          "scale": {"domain": ["New South Wales", "Victoria", "Tasmania", "South Australia"], "range": ["#e41a1c", "#377eb8", "#4daf4a", "#ff7f00"]},
+          "scale": {"domain": ["New South Wales", "Victoria", "Tasmania", "South Australia"], "range": ["#e41a1c", "#377eb8", "#a30af5", "#6d6b6e"]},
           "legend": {"title": "State", "orient": "right"}
         },
         "tooltip": [

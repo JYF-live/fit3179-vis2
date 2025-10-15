@@ -37,7 +37,7 @@
       "type": "nominal",
       "scale": {
         "domain": ["Hot (≥25°C)", "Medium (12-25°C)", "Cold (<12°C)"],
-        "range": ["#d62728", "#ff7f0e", "#2ca02c"]
+        "range": ["#f7c634", "#9c3a83", "#040959"]
       },
       "legend": {
         "title": "Temperature Category",

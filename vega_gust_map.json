@@ -39,8 +39,8 @@
     "color": {
       "field": "gustDays",
       "type": "quantitative",
-      "title": "Wind Warning Days (>62 km/h)",
-      "scale": { "scheme": "bluepurple" }
+      "title": "No. Days",
+      "scale": { "scheme": "greenblue" }
     },
     "tooltip": [
       { "field": "properties.STE_NAME16", "type": "nominal", "title": "State" },

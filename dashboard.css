@@ -123,6 +123,19 @@ label {
     margin-top: 50px;
 }
 
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+.footer p {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
 @media (max-width: 768px) {
     .grid-2, .grid-3, .grid-pie {
         grid-template-columns: 1fr;
